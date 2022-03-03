@@ -12,7 +12,9 @@ public class WriteToFile {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		//create file in D: Drive
-		String TestFile = "C:\\autoProgram\\Notes.docx";
+		String TestFile = "C:\\autoProgram\\Notes.txt";
+		
+		System.out.println("I'm here");
 		File FC = new File(TestFile);//Created object of java File class
 		FC.createNewFile();//Create file.
 		
@@ -31,14 +33,17 @@ public class WriteToFile {
 		FileReader FR = new FileReader(TestFile);
 		BufferedReader BR = new BufferedReader(FR);
 		String Content = "";
+		BW.close();
 		
 		//Loop to read all lines one by one from file and print it
 		while((Content = BR.readLine())!= null) {
 			System.out.println(Content);
-
-
+			
+	
 	}
-
+		
+		BR.close();
+		
 }
 
 }
