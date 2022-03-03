@@ -7,52 +7,46 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Pops {
 
 	
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-//		System.setProperty("webdriver.chrome.driver","C:\\selenium\\chromedriver.exe");
-//	
-//		String baseURL = "http://demo.guru99.com/test/delete_customer.php";
-//		WebDriver d = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","C:\\selenium\\chromedriver.exe");
 		
-	System.setProperty("webdriver.chrome.driver","C:\\selenium\\chromedriver.exe");
+		//Creating instance of Chrome driver
+		WebDriver driver = new ChromeDriver ();
+		//setting up the explicit waits 
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+	
+		String baseURL = "http://demo.guru99.com/test/delete_customer.php";
+		driver.get(baseURL);
+		//implicit wait
+//		driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
 		
-		//Create instance of Chrome driver
-		WebDriver d = new ChromeDriver(); String baseUrl ="http://demo.guru99.com/test/delete_customer.php";
-		d.get(baseUrl);
+		WebElement wait1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("cusid")));
+		System.out.println(wait1);
+		driver.findElement(By.name("cusid")).sendKeys("34234234");
+		driver.findElement(By.name("submit")).submit();
 		
+		//switch to the alert
+		Alert alert = driver.switchTo().alert();
 		
-		d.manage().window().maximize();//always write wait code after this 
-		d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);//for page load
-	//	d.get(baseURL);//Testing webpage
-		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//for Implicit wait
+		//Capturing alert message
+		String alertMessage = driver.switchTo().alert().getText();
 		
-		d.findElement(By.name("cusid")).sendKeys("34234234");
-		d.findElement(By.xpath("//input[@value='Submit']")).click();
-		Thread.sleep(3000);
+		//Display message on console
+		System.out.println(alertMessage);
+		Thread.sleep(500);
 		
+		//accept the alert
+		alert.accept();
+		alert.dismiss();
 		
-		
-		//JavascriptExecutot js = (JavascriptExecutor)d; //Scrolling using JavascriptExecutor
-		//js.executeScript ("window.scrollBy(0,380)");//Scroll Down to file upload button (+ve)
-//		Thread.sleep(3000);
-		
-		//File Ulpading using Sendkeys....
-		
-		WebElement browse = d.findElement(By.xpath("//input[@id='file-upload']"));
-		
-		//Clock on 'Choose file' to upload the desired file
-		browse.sendKeys("C:\\autoProgram\\Notes.docx"); //Uploading the file using sendKeys
-		System.out.println("File is Uploaded Successfully");
-		
-		
-		
-		
-		
-		
+			
 		
 	}
 
