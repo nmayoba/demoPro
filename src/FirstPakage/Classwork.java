@@ -26,9 +26,9 @@ public class Classwork {
 		
 		//compare title returned is the site title
 		 if (siteTitle.contentEquals(returnedTitle)){
-			System.out.println("Test Passed");
+			System.out.println("Test passed");
 		}else {
-			System.out.println("Test Failed");
+			System.out.println("Test failed");
 		}
 		 
 		 //Enter email address and password
@@ -38,7 +38,7 @@ public class Classwork {
 		 //Click on sign in button
 		 driver.findElement(By.name("SubmitLogin")).submit();
 		 
-		 //Varify if user is successfully logged in using ClassName
+		 //Verify if user is successfully logged in using ClassName
 		 driver.findElement(By.className("error-copy"));
 		 
 		 System.out.println("Log in test passed");

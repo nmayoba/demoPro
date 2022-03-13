@@ -10,14 +10,13 @@ public class Helloword {
 		int sum2 = x + 250;
 		System.out.println(x + " and " +sum2);
 		//assignment operators
-		int y =5;
+		//int y =5;
 		//x = x + 3;
 		x += 3; 
 		System.out.println(x);
 		
 		//the string object
-		String txt = "ABCDEFGHIGKLMNOP";
-		System.out.println("The length of the txt string is " + txt.length());
+		//System.out.println("The length of the txt string is " + txt.length());
 	}
 
 }

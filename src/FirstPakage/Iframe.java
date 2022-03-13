@@ -10,9 +10,11 @@ public class Iframe {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver","C:\\selenium\\chromedriver.exe");
+		
 		//Creating instance of Chrome
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://demo.guru99.com/test/guru99home/");
+		
 		int totalbefore=driver.findElements(By.xpath("html/body/a/img")).size();
 		System.out.println("Total images before switch " +totalbefore);
 		driver.switchTo().frame("a077aa5e"); //switching the frame by ID

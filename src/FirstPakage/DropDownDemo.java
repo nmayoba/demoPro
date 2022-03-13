@@ -11,22 +11,22 @@ public class DropDownDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver","C:\\selenium\\chromedriver.exe");
-		//Create the instance of chrome driver
+		//Create the instance of Chrome driver
 		WebDriver driver = new ChromeDriver();
 		
 		//Launching URL
 		driver.get("https://demoqa.com/select-menu");
 		
-		//Maximising the window
+		//Maximizing the window
 		driver.manage().window().maximize();
 				
-		//Select the dropdown element by locating it 's id
+		//Select the drop down element by locating it 's id
 		Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 		
-		//print the options of the dropdown
+		//print the options of the drop down
 		List<WebElement>lst=select.getOptions();
 		
-		//Looping through the options and printing dropdown options
+		//Looping through the options and printing drop down options
 		System.out.println("The dropdown options are");
 		for(WebElement options:lst)
 			System.out.println(options.getText());
@@ -35,7 +35,7 @@ public class DropDownDemo {
 		select.selectByIndex(4);
 		System.out.println("Selected value is: " + select.getFirstSelectedOption().getText());
 		
-		//select the option as magenta using visible text
+		//select the option as Magenta using visible text
 		select.selectByVisibleText("Magenta");
 		System.out.println("Select colour is: " + select.getFirstSelectedOption().getText());
 				

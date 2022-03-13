@@ -2,6 +2,8 @@ package FirstPakage;
 
 public class MethodifElse {
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 	//It is common to use if ..else statement inside the method
 	//Create a checkAge() method with an integer variable called age
 	
@@ -13,10 +15,34 @@ public class MethodifElse {
 			System.out.println("Access granted you are old enough!");
 	
 
-}
-public static void main(String[]args) {
 	//TODO Auto-generated method stub
-	checkAge(50);
+	checkAge  (50);
 	
+
+
 }
 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
